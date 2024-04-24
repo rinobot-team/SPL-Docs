@@ -9,6 +9,8 @@ Este respositório tem como objetivo documentar o codebase Tamboerijn, que consi
 
 Ele está sob a licensa GPU 3.0, que pode ser encontrada [aqui](./LICENSE), assim como o repositório original da equipe HULKs, que pode ser encontrado [aqui](https://github.com/HULKs/hulk).
 
+Todas as pastas abordam um tópico específico do codebase, e contém um arquivo `sobre.md` com informações sobre o tópico.
+
 É uma boa prática que todos os membros da categoria leiam este documento para entender o funcionamento do codebase, assim como atualizar este documento conforme novas atualizações forem sendo implementadas.
 
 Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membros da equipe, ou deixando uma issue do [repositório oficial](https://github.com/rinobot-team/Tamboerijn). Qualquer problema com a tradução, adaptação ou redação do documento pode ser reportado diretamente neste repositório.

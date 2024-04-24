@@ -1,4 +1,6 @@
 # Estrutura de diretórios
+*Importante: diretório = pasta*
+
 O repostitório do programa é classificado como [monorepo](https://en.wikipedia.org/wiki/Monorepo), ou seja, todos os códigos fontes estão em um único repositório. A estrutura de diretórios é organizada de forma a facilitar a navegação e a compreensão do código. Aqui está uma visão geral da estrutura de diretórios:   
 - `crates/`: Contém diverentes crates (módulos) que compõem o programa, além de outras crates para robótica e ferramental.
     - `code_generation/`: Assim que o código fonte é analizado, essa crate vai gerar o código necessário para a execução dos cyclers e nós.

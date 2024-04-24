@@ -1,0 +1,11 @@
+# Entry Point dos processos
+O software de controle robótico Tamboerijn pode ser compilado para diferentes plataformas, NAO e Webots. Para cada plataforma há um binário compilado diferente, e um ponto de entrada do programa diferente. Neste documento, vamos explicar o ponto de entrada para cada plataforma. Todos os executáveis definem uma função `main()` que é o ponto de entrada do programa, veja `crates/hulks_nao` ou `crates/hulks_webots` para mais detalhes. Os próximos parágrafos explicam os primeiros passos do programa em ambas as plataformas.
+
+## Parâmetros de hardware
+No final da função `main()`, as interfaces de hardware são criadas. Além do domínio da robótica, a interface de hardware também necessita de alguns parâmetros para inicializar o hardware. Esses parâmetros são lidos de um arquivo JSON que pode ser passado como primeiro argumento na linha de comando do executável. Se omitido, o arquvio padrão `etc/parameters/hardware.json` é carregado.
+
+## Desligamento e CancellationToken
+As funções `main()` para ambas as plataformas registram o desligamento por meio da [biblioteca ctrlc](https://docs.rs/ctrlc/latest/ctrlc/). Os handlers desse desligamento reagem com os sinais padrão do Linux `SIGINT` e `SIGTERM`, chamando o `CancellationToken::cancelled()` que cancela o token assim que receber o sinal de desligamento. O `CancellationToken` é um primitivo de sincronização que é compartilhado em toda a framework permitindo desligar todos os componentes de qualquer local do código. Diversos lugares escutam pelo evento de `cancelled()` e terminam assim que ouver cancelamento. Além de cancelar com a o token `CancellationToken` sob sinal do Linux, condições de erro dentro do sistema de controle dos robôs também podem engatilhar o cancelamento. Esses conceitos permitem que o programa seja desligado de forma segura e rápida em caso de erro ou requisição de término.
+
+## Interface de hardware e Runtime
+Tanto no NAO quanto no Webots, o software de controle dos robôs precisa de acesso ao hardware ou interface simulada. A interface de hardware provê uma maneira abstrata de interagir com o backend "abaixo". A função `main()` primeiro inicia a interface de hardware, e depois inicia o runtime (`run()`) com ela. Veja [Interface de Hardware](./hardware-interface.md) para mais informações sobre o que a interface inicializa.

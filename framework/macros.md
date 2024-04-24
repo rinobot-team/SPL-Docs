@@ -1,0 +1,46 @@
+# Macros
+*Documentação detalhada ainda não fornecida pela HULKs*
+
+## **TODO**: Elaborar
+- Macros
+    - O que é um Macro em Rust? Recebe um TokenStream como input e consegue transformar ele e sair como um novo TokenStream
+    - Objetivo: reduzir duplicação de código, reduzir código escrito manualmente
+    - Nós
+        - Declaração de nó `#[node(...)]`
+            - Ligar ao `impl Node {}`
+            - Adicionar `struct CycleContext`
+                - Contém inputs, outputs adicionais, etc.
+            - Adicionar `impl CycleContext { fn new(...) -> CycleContext {} }`
+            - Adicionar `struct MainOutputs`
+                - Contém outputs principais
+            - Adicionar `impl MainOutputs { fn update(...) {} fn none() {} }`
+            - Modificar `impl Node {}`: Adicionar `fn run_cycle() {}`
+                - Criar `CycleContext` e `MainOutputs`
+                - Chamar o método `cycle()` de um nó
+        - Inputs
+            - Input `#[input(path, data_type, cycler, name)]` recebe dados do ciclo atual dentro do cycler atual
+            - Dentro do cycler de controle:
+                - Historic Input `#[historic_input(path, data_type, name)]` Recebe dados históricos do cycler de controle
+                - Perception Input `#[perception_input(path, data_type, cycler, name)]` Recebe dados de percepção de um cycler de percepção
+                - Persistent State `#[persistent_state(path, data_type, name)]` Estado compartilhado entre nós sobre múltiplos ciclos
+            - Parameter `#[parameter(data_type, name, path, on_changed)]` Recebe parâmetros de configuração do arquivo de configuração/via Communication
+        - Outputs
+            - Main Output `#[main_output(data_type, name)]` Saída para nós dependentes, gerado a cada ciclo
+            - Additional Output `#[additional_output(path, data_type, name)]` Saída opcional que pode ser habilitada / requisitada pela Comunicação
+    - `require_some!` TODO: `required` flag?    
+        - Extrai dados do contexto do ciclo e retorna `none` para todas as saídas principais se a entrada for nenhuma
+        - `require_some!(...) => match ... { Some(...) => ..., None => return MainOutputs::none() }`
+    - SerializeHierarchy
+        - Trait
+            - Principalemnte usado pela Comunicação para (de-)serialização
+            - Adiciona suporte para caminhos de campos
+            - Permite (de-)serialização para / de caminhos de campos `fn serialize_hierarchy(field_path)`, `fn deserialize_hierarchy(field_path, data)`
+            - Permite verificar se um caminho de campo existe
+            - Permite gerar um objeto de hierarquia
+            - Implementado para todas as databases e configurações
+        - Macro `#[derive(SerializeHierarchy)]`
+            - Ligado a structs
+            - Gera`impl SerializeHierarchy for ... { ... }`
+                - Itera sobre todos os campos e delega chamadas de função para os campos
+    - 3rd-party macros: `nalgebra::point` ou `nalgebra::matrix`
+        - Link para macros de terceiros

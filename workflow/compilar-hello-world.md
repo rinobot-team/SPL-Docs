@@ -3,7 +3,7 @@
 ***Exemplo: quero rodar um "Hello World" no robô, como fazer?***
 
 # Introdução
-Quando um código é compilado, usando, por exemplo, <strong><code>cargo build</code></strong>, é basicamente gerado um **  arquivo binário** específico para a arquitetura do seu computador. Ou seja, caso você compile no seu computador muito provavelmente o binário <strong>não </strong>vai rodar no robô. Da mesma forma, caso você compile no seu computador muito provavelmente não vai rodar num computador com arquitetura x86[^1].
+Quando um código é compilado, usando, por exemplo, <strong><code>cargo build</code></strong>, é basicamente gerado um ** arquivo binário** específico para a arquitetura do seu computador. Ou seja, caso você compile no seu computador muito provavelmente o binário <strong>não </strong>vai rodar no robô. Da mesma forma, caso você compile no seu computador muito provavelmente não vai rodar num computador com arquitetura x86[^1].
 
 # O que fazer então?
 **~~Compila o código no robô mesmo~~**

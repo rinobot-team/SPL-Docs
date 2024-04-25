@@ -77,7 +77,7 @@ O comando **scp** é a mistura de **ssh** com **cp**<sub>(copiar)</sub>. Ou seja
     # local de destino no robô: /home/nao (representado pelo "~" dentro do robô)
 
 ## TODO:
-- [ ] E se eu não tiver nem essa pasta .naosdk? Instala o codigo da HULKs ./pepsi
+- [X] E se eu não tiver nem essa pasta .naosdk? Instala o codigo da HULKs ./pepsi
 - [X] Para checar se funcionou
 - [X] Como compilar então?
 - [ ] E compilar biblioteca?

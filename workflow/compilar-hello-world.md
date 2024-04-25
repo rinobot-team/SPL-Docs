@@ -75,6 +75,13 @@ O comando **scp** é a mistura de **ssh** com **cp**<sub>(copiar)</sub>. Ou seja
     # usuário no robô: nao
     # IP do robô: 192.186.0.100
     # local de destino no robô: /home/nao (representado pelo "~" dentro do robô)
+### Para passar o código compilado pro robô então:
+
+    scp ~/teste/target/x86_64-aldebaran-linux-gnu/debug/teste
+sendo "teste" o nome da pasta/projeto e "teste" por padrão então o nome do executável
+note que os binários ficam na pasta target quando compilados via 'cargo'
+
+---
 
 ## TODO:
 - [X] E se eu não tiver nem essa pasta .naosdk? Instala o codigo da HULKs ./pepsi

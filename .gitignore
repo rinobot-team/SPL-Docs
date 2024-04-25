@@ -1,0 +1,5 @@
+#Ambiente python3
+.venv/
+
+#Site buildado
+site/

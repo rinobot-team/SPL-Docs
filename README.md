@@ -1,4 +1,4 @@
-# Documentação do Tamboerijn
+# Documentação do [Tamboerijn](https://github.com/rinobot-team/Tamboerijn)
 
 *Disclaimer: This docs are based on the original documentation written by the HULKs team, it has some parts adapted to our team's needs*
 

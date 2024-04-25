@@ -20,12 +20,15 @@ Basta usar o “cargo” (ferramenta de compilação do rust) que tem na toolcha
 Agora eu tenho dois _cargo_s no meu computador, um que compila Rust normalmente, outro que compila ESPECIFICAMENTE pro NAO. Então só usar esse segundo ao invés do primeiro quando eu for compilar pro robô!!
 Para isso eles (HULKs) desenvolveram um **script** de _bash _que configura o ambiente para usar essa versão do cargo (e demais coisinhas necessárias para funcionar) quando você digitar **<code>cargo build</code>**.
 #### Localização do Script:
+
     ~/.naosdk/7.1.0/environment-setup-corei7-64-aldebaran-linux
     # note que "~" é o mesmo que "/home/seu_nome"
     # note também que talvez o caminho mude, esse funciona para a versão 7.1.0, mas  muito provavelmente NÃO é seu caso 
+    
 Mas tem um porém, esse script altera várias variáveis de ambiente para fazer funcionar o código. Então vale entrar em outra sessão[^3] de **bash** antes para não _contaminar_ a atual.
 #### Execução do Script:
 Para rodar o script execute:
+
     bash
     source ~/.naosdk/7.1.0/environment-setup-corei7-64-aldebaran-linux 
     # troque o argumento ~/.naosdk/7.1.0/environment-setup-corei7-64-aldebaran-linux  pelo caminho desse arquivo em questão no seu computador!!

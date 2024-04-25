@@ -82,7 +82,9 @@ sendo "teste" o nome da pasta/projeto e "teste" por padrão então o nome do exe
 note que os binários ficam na pasta target quando compilados via 'cargo'
 
 ---
+![nao04_montado_no_rininho](/img/nao04_montado_no_rininho.JPG)
 
+---
 ## TODO:
 - [X] E se eu não tiver nem essa pasta .naosdk? Instala o codigo da HULKs ./pepsi
 - [X] Para checar se funcionou

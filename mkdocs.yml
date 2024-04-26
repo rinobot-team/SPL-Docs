@@ -1,6 +1,6 @@
 site_name: Docs Tamboerijn  Rinobot-Jaguar
 site_url: https://tambo-docs.com
-repo_ulr: https://github.com/rinobot-team/Tamboerijn
+repo_url: https://github.com/rinobot-team/Tamboerijn
 repo_name: Repo Tamboerijn
 nav:
   - Home: index.md
@@ -31,19 +31,7 @@ nav:
     - Recording & Replay:  ferramental/recording.md
     - Aliveness:  ferramental/aliveness.md
 theme:
-  name: material
-  logo: img/favicon.ico
-  palette:
-    # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Habilitar tema escuro
-      # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Habilitar tema claro
+  name: readthedocs
 locale: pt_BR
 highlightjs: true
 hljs_languages:

@@ -8,3 +8,4 @@ A ordem ideal para se seguir a documentação é:
     3. [`config-projeto.md`](./config-projeto.md)  
     4. [`imagem-sdk.md`](./imagem-sdk.md)  
     5. [`config-nao.md`](./config-nao.md)  
+    6. [`documentacao.md`](./documentacao.md)

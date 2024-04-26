@@ -1,8 +1,8 @@
-# Documentação do [Tamboerijn](https://github.com/rinobot-team/Tamboerijn)
+# Documentação do Tamboerijn
 
 *Disclaimer: This docs are based on the original documentation written by the HULKs team, it has some parts adapted to our team's needs*
 
-![Bisnaguinha](./docs/bisnaguinha.jpg)
+![Bisnaguinha](bisnaguinha.jpg)
 
 ## Sobre
 Este respositório tem como objetivo documentar o codebase Tamboerijn, que consiste na adaptação do code realease da equipe alemã HULKs. Ele contém partes traduzidas do inglês para o português, além de algumas adaptações feitas pela equipe para suprir nossos interesses e necessidades internas.
@@ -19,18 +19,9 @@ Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membro
 
 | Tópico | Status |
 | ------ | ------ |
-<<<<<<< HEAD
-| [Configuração do Projeto](./config-projeto/README.md)  | Incompleto |
-| [Framework](./framework/README.md) | Incompleto |
-| [Ferramental](./ferramental/README.md) | Incompleto |
-| [Sistema Operacional](./sistema-operacional/README.md) | Não existe |
-| [Robótica](./robotica/README.md) | Não existe |
-| [Workflow](./workflow/README.md) | Não existe |
-=======
 | [Configuração do Projeto](./docs/config-projeto/README.md)  | Incompleto |
 | [Framework](./docs/framework/README.md) | Incompleto |
 | [Ferramental](./docs/ferramental/README.md) | Incompleto |
 | [Sistema Operacional](./docs/sistema-operacional/README.md) | Não existe |
 | [Robótica](./docs/robotica/README.md) | Não existe |
 | [Workflow](./docs/workflow/README.md) | Não existe |
->>>>>>> dev

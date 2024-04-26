@@ -1,0 +1,51 @@
+site_name: Docs Tamboerijn  Rinobot-Jaguar
+site_url: https://tambo-docs.com
+repo_ulr: https://github.com/rinobot-team/Tamboerijn
+repo_name: Repo Tamboerijn
+nav:
+  - Home: index.md
+  - Configuração:
+    - Indice: config-projeto/README.md
+    - Git: config-projeto/config-git.md
+    - Projeto: config-projeto/config-projeto.md
+    - Imagem & SDK: config-projeto/imagem-sdk.md
+    - NAO: config-projeto/config-nao.md
+  - Framework:
+    - Indice: framework/README.md
+    - Estrutura dos Diretórios: framework/directory-struct.md
+    - Entry Point: framework/entry-point.md
+    - Runtime: framework/runtime.md
+    - Cyclers: framework/cyclers.md
+    - Nós: framework/nodes.md
+    - Base de Dados e Tipos: framework/databases-types.md
+    - Parâmetros: framework/parameters.md
+    - Comunicação: framework/communication.md
+    - Interface com Hardware: framework/hardware-interface.md
+    - Comunicação entre Threads: framework/thread-communication.md
+    - Macros: framework/macros.md
+    - Tratamento de Erros: framework/error-handling.md
+  - Ferramental:
+    - Indice: ferramental/README.md
+    - Pepsi:  ferramental/pepsi.md
+    - Twix:  ferramental/twix.md
+    - Recording & Replay:  ferramental/recording.md
+    - Aliveness:  ferramental/aliveness.md
+theme:
+  name: material
+  logo: img/favicon.ico
+  palette:
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Habilitar tema escuro
+      # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Habilitar tema claro
+locale: pt_BR
+highlightjs: true
+hljs_languages:
+  - bash
+  - rust

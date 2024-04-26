@@ -1,7 +1,7 @@
 # Runtime
 O Runtime, ou tempo de execução, é o componente do software que encapsula todos os subcomponentes, como interface de hardware, comunicação, e execução de nós. Aqui está uma imagem mais detalhada do que o Runtime faz:   
 
-<img title="Diagrama do Runtime" alt="Imagem com um diagrama mais detalhado do runtime" src="../img/dataflow.drawio.png">
+![Diagrama de Runtime](dataflow.drawio.png)
 
 Essa seção e as subsequentes vão explicar esse diagrama com mais detalhes. Muitas conexões do fluxo de dados não estão representadas para facilitar a compreensão da imagem.
 

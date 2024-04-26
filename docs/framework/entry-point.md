@@ -1,4 +1,4 @@
-# Entry Point dos processos
+# Entry Point dos Processos
 O software de controle robótico Tamboerijn pode ser compilado para diferentes plataformas, NAO e Webots. Para cada plataforma há um binário compilado diferente, e um ponto de entrada do programa diferente. Neste documento, vamos explicar o ponto de entrada para cada plataforma. Todos os executáveis definem uma função `main()` que é o ponto de entrada do programa, veja `crates/hulks_nao` ou `crates/hulks_webots` para mais detalhes. Os próximos parágrafos explicam os primeiros passos do programa em ambas as plataformas.
 
 ## Parâmetros de hardware

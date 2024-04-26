@@ -5,7 +5,7 @@ Esse tópico aborda a framework do nosso software para o NAO. Os capítulos pass
     - [Runtime](./runtime.md): Como a runtime faz a conexão entre os módulos do sistema?   
     - [Cyclers](./cyclers.md): O que são os cyclers (ciclos de execução) e como eles rodam os diferentes nós?   
     - [Nós](./nodes.md): O que são os nós e como eles são implementados?   
-    - [Bases de dados e tipos](./databases-types.md): Como os dados são compartilhados entre cyclers e a framework?   
+    - [Bases de dados e Tipos](./databases-types.md): Como os dados são compartilhados entre cyclers e a framework?   
     - [Parâmetros](./parameters.md): Como os parâmetros são passados para os nós pela framework?   
     - [Comunicação](./communication.md): Do que se trata e como é feita a comunicação entre framework e nós?   
     - [Interface com Hardware](hardware-interface.md): Como o hardware é abstraído para a framework?   
@@ -20,4 +20,4 @@ A framework provê os principais aspectos necessários para o desenvolvimento de
     - [Cyclers](./cyclers.md): Cicla entre os nós, processa dados do hardware e gera saídas.   
     - [Comunicação](./communication.md): Permite a comunicação entre o framework e outros recursos, como arquivos, nós e redes.
 
-<img title="Diagrama do framework" alt="Representação diagramática da estrutura do framework" src="../img/overview.drawio.png">
+![Diagrama do Framework](overview.drawio.png)

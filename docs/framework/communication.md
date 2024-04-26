@@ -8,7 +8,7 @@ Em um alto nível, a comunicação permite aplicações externas à:
 ## Canais Assíncronos e Tasks
 Já que a comunicação lida com I/O (entrada e saída de dados) e está inativo a maior parte do tempo esperando por esse I/O, ela é implementada como um subcomponente assíncrono (usando a [crate Tokio do Rust](https://tokio.rs/)) utilizando o paradigma de [message passing](https://en.wikipedia.org/wiki/Message_passing). As partes da comunicação são executadas como tasks (tarefas) assíncronas que são conectadas via canais de passagem de mensagem. O seguinte diagrama mostra todas as tasks de comunicação como caixas retangulares (exceto as threads dos cyclers, que podem ou não ser vistas como tasks):
 
-<img title="Diagrama de Tasks e mensagens assíncronas" alt="O diagrama mostra a arquitetura de troca de mensagens e tasks entre diferentes módulos do sistema" src="../img/communication_dataflow.drawio.png" width="940" height="508">
+![Diagrama de Comunicação](communication_dataflow.drawio.png)
 
 Conexões sólidas representam fluxos de dados implementados com canais. Conexões tracejadas representam o comportamento de inicialização de tasks.
 

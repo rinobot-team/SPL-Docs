@@ -2,7 +2,7 @@
 
 *Disclaimer: This docs are based on the original documentation written by the HULKs team, it has some parts adapted to our team's needs*
 
-![Bisnaguinha](./docs/bisnaguinha.jpg)
+![Bisnaguinha](bisnaguinha.jpg)
 
 ## Sobre
 Este respositório tem como objetivo documentar o codebase Tamboerijn, que consiste na adaptação do code realease da equipe alemã HULKs. Ele contém partes traduzidas do inglês para o português, além de algumas adaptações feitas pela equipe para suprir nossos interesses e necessidades internas.

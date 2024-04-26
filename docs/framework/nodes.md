@@ -1,7 +1,7 @@
 # Nodes (Nós)
 Os Nós normalmente contém código de robótica propriamente dito e são intercambiáveis entre cyclers. Cada nó é caracterizado po uma função `cycle()` que é chamada em cada ciclo. Essa função pega os inputs do nó como parâmetros e retorna os outputs deste node. Além disso, nós possuem um estado que é preservado entre ciclos.
 
-<img title="Diagrama do nó" alt="Funcionamento do nó representado em forma de diagrama, mostra que a entrada e saída de dados na função cicle independe do estado do nó" src="../img/node.drawio.png">
+![Diagrama de um nó](node.drawio.png)
 
 Nós são structs normais do Rust em que os campos da struct representam o estado, e um método chamado `cycle()` no `impl` do nó que representa a função de ciclo. Esse conceito permite escrever os nós na forma mais otimizada para a linguagem Rust. Um nó pode ter multiplos inputs de diferentes tipos que podem ser adicionados ao struct. Aqui está um exemplo de nó, mais informação pode ser encontrada em [Macros](./macros.md):   
 

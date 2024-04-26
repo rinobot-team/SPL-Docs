@@ -116,7 +116,7 @@ Erros de sintaxe ou localização de arquivo são mostrados no terminal, e o sit
 
 **Além disso é importante adicionar novos arquivos na seção `nav` do arquivo `mkdocs.yml`, para que eles sejam exibidos no mapa do site.**
 
-## #Deploy
+### Deploy
 Para publicar a documentação no GitHub Pages, basta rodar o comando:
 
 ```bash

@@ -10,6 +10,7 @@ nav:
     - Projeto: config-projeto/config-projeto.md
     - Imagem & SDK: config-projeto/imagem-sdk.md
     - NAO: config-projeto/config-nao.md
+    - Documentação: config-projeto/documentacao.md
   - Framework:
     - Indice: framework/README.md
     - Estrutura dos Diretórios: framework/directory-struct.md

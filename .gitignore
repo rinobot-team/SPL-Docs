@@ -1,2 +1,5 @@
 #Site buildado
 site/
+
+#Ambiente python
+.venv/

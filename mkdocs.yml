@@ -31,7 +31,7 @@ nav:
     - Recording & Replay:  ferramental/recording.md
     - Aliveness:  ferramental/aliveness.md
 theme:
-  name: material
+  name: readthedocs
 locale: pt_BR
 highlightjs: true
 hljs_languages:

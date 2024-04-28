@@ -44,6 +44,7 @@ theme:
   features:
     - content.code.annotate
     - content.tabs.link
+    - navigation.indexes
     - navigation.tracking
   palette:
     - media: "(prefers-color-scheme: light)"

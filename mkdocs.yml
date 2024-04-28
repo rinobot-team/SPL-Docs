@@ -1,7 +1,7 @@
 site_name: Docs Tamboerijn  Rinobot-Jaguar
-site_url: https://tambo-docs.com
-repo_url: https://github.com/rinobot-team/Tamboerijn
-repo_name: Repo Tamboerijn
+site_url: https://rinobot-team.github.io/SPL-Docs/
+repo_url: https://github.com/rinobot-team/SPL-Docs
+repo_name: SPL-Docs
 nav:
   - Home: index.md
   - Configuração:
@@ -10,6 +10,7 @@ nav:
     - Projeto: config-projeto/config-projeto.md
     - Imagem & SDK: config-projeto/imagem-sdk.md
     - NAO: config-projeto/config-nao.md
+    - Escrevendo Documentação: config-projeto/documentacao.md
   - Framework:
     - Indice: framework/README.md
     - Estrutura dos Diretórios: framework/directory-struct.md
@@ -22,6 +23,7 @@ nav:
     - Comunicação: framework/communication.md
     - Interface com Hardware: framework/hardware-interface.md
     - Comunicação entre Threads: framework/thread-communication.md
+    - Filtragem: framework/filtering.md
     - Macros: framework/macros.md
     - Tratamento de Erros: framework/error-handling.md
   - Ferramental:
@@ -29,7 +31,13 @@ nav:
     - Pepsi:  ferramental/pepsi.md
     - Twix:  ferramental/twix.md
     - Recording & Replay:  ferramental/recording.md
+    - Behaviour Simulation: ferramental/behaviour-sim.md
     - Aliveness:  ferramental/aliveness.md
+  - Workflow:
+    - Indice: workflow/README.md
+    - Hello World: workflow/compilar-hello-world.md
+    - Competições: workflow/competicao.md
+    - Desenvolvimento: workflow/desenvolvimento.md
 theme:
   name: readthedocs
 locale: pt_BR

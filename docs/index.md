@@ -7,7 +7,7 @@
 ## Sobre
 Este respositório tem como objetivo documentar o codebase Tamboerijn, que consiste na adaptação do code realease da equipe alemã HULKs. Ele contém partes traduzidas do inglês para o português, além de algumas adaptações feitas pela equipe para suprir nossos interesses e necessidades internas.
 
-Ele está sob a licensa GPU 3.0, que pode ser encontrada [aqui](./LICENSE), assim como o repositório original da equipe HULKs, que pode ser encontrado [aqui](https://github.com/HULKs/hulk).
+Ele está sob a licensa GPU 3.0, que pode ser encontrada [aqui](https://github.com/rinobot-team/Tamboerijn?tab=GPL-3.0-1-ov-file), assim como o repositório original da equipe HULKs, que pode ser encontrado [aqui](https://github.com/HULKs/hulk).
 
 Todas as pastas abordam um tópico específico do codebase, e contém um arquivo `README.md` com informações sobre o tópico.
 
@@ -19,9 +19,9 @@ Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membro
 
 | Tópico | Status |
 | ------ | ------ |
-| [Configuração do Projeto](./docs/config-projeto/README.md)  | Incompleto |
-| [Framework](./docs/framework/README.md) | Incompleto |
-| [Ferramental](./docs/ferramental/README.md) | Incompleto |
-| [Sistema Operacional](./docs/sistema-operacional/README.md) | Não existe |
-| [Robótica](./docs/robotica/README.md) | Não existe |
-| [Workflow](./docs/workflow/README.md) | Não existe |
+| Configuração do Projeto  | Incompleto |
+| Framework | Incompleto |
+| Ferramental | Incompleto |
+| Sistema Operacional | Não existe |
+| Robótica | Não existe |
+| Workflow | Incompleto |

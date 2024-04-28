@@ -94,6 +94,12 @@ O MkDocs é uma ferramenta que permite a criação de documentações estáticas
     source venv/bin/activate
     pip install mkdocs mkdocs-material
 ```
+
+Caso o método anterior não funcione (se o tema não for encontrado ao utilizar `mkdocs serve`), você pode instalar o MkDocs e o MkDocs Material usando o `pip` diretamente, mas não é recomendado:
+
+```bash
+    pip install --break-system-packages mkdocs mkdocs-material
+```
 Com isso você já deve ter tudo necessário para documentar.
 
 ## Workflow 

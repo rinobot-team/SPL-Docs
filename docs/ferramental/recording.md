@@ -16,6 +16,7 @@ Dados são gravados somente durante `PrimaryState::Ready`, `PrimaryState::Set` e
 
 ## Replayer
 Assumindo que você já gravou alguns dados em um robô, é possivel utilizar o *replayer* para revisitar dados gravados.
+
 - Faça download dos logs em um diretório `logs` dentro do repositório via `./pepsi postgame ... meu_replay_gamer ...`
 - O diretório `meu_replay_gamer` agora contém diretórios com logs de cada robô. Cada diretório de robô contém um diretório com dados de replay de uma execução do binário `hulk`. Todos os arquivos de instâncias de cyclers precisam estar presentes, independente de se estão ativos ou não durante a gravação (neste caso estarão vazios)
 - Inicie a ferramenta de replay apontando pro diretório do log que você quer revisitar: `./pepsi run --target replayer --meu_replay_gamer/robot1/10.1.24.42/123321`

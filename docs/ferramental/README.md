@@ -1,6 +1,6 @@
 # Ferramental   
 
-Além do código do NAO, nosso repositorio contém um ferramental para facilitar o desenvolvimento, manutenção do e testes do código. Estas são algumas das ferramentas que utilizamos:   
+Além do código do NAO, nosso repositorio contém um ferramental para facilitar o desenvolvimento, manutenção e testes do código. Estas são algumas das ferramentas que utilizamos:   
 
 - [Pepsi](./pepsi.md): Multi-ferramenta para automatizar tasks repetitivas, como compilação e deploy
 - [Twix](./twix.md): Ferramenta de Debugging para visualizar dados ao vivo do NAO ou Webots

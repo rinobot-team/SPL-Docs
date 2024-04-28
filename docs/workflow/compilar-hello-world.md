@@ -2,10 +2,10 @@
 # Quero compilar um código qualquer em Rust pro NAO</p>
 ***Exemplo: quero rodar um "Hello World" no robô, como fazer?***
 
-# Introdução
+## Introdução
 Quando um código é compilado, usando, por exemplo, `cargo build`, é basicamente gerado um **arquivo binário** específico para a arquitetura do seu computador. Ou seja, caso você compile no seu computador muito provavelmente o binário **não** vai rodar no robô. Da mesma forma, caso você compile no seu computador muito provavelmente não vai rodar num computador com arquitetura x86 [^1].
 
-# O que fazer então?
+## O que fazer então?
 **Compila o código no robô mesmo: Cross Compiling.** Você compila o código em uma máquina para ser executado em outra (outro tipo de máquina/arquitetura)!  
 
 ## Mas como fazer isso?

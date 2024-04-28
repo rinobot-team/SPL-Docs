@@ -36,10 +36,12 @@ Lista ordenada:
 Link: [Colinha de markdown](https://www.markdownguide.org/cheat-sheet/)
 ```
 Algumas convenções de formatação de texto são:    
+
 - Utilizar somente um `# Titulo` por arquivo.  
-- Adicionar dois espaços no final de uma linha para quebra de linha.
-- Utilizar `---` para separar seções, ou assuntos diferentes.
-- Comandos ou estruturas de diretórios devem ser escritos como `código`.
+- Adicionar dois espaços no final de uma linha para quebra de linha.  
+- Utilizar `---` para separar seções, ou assuntos diferentes.  
+- Comandos ou estruturas de diretórios devem ser escritos como `código`.  
+- Separar texto de tópicos com uma linha em branco.  
 
 
 Informações mais detalhadas sobre a linguagem Markdown podem ser encontradas no [Cheat-Sheet](https://www.markdownguide.org/cheat-sheet/).  
@@ -57,9 +59,9 @@ Informações mais detalhadas sobre a linguagem Markdown podem ser encontradas n
 Caso haja algum problema de permissão entre em contato com o gerente da categoria ou diretor de projetos.
 
 O repositório é dividido em 3 branchs principais:
-- `master`: branch principal, onde o código estável é mantido.
-- `dev`: branch de desenvolvimento, onde as novas documentações são escritas e revisadas.
-- `gh-pages`: branch de produção, onde a documentação é publicada.
+- `master`: branch principal, onde o código estável é mantido.  
+- `dev`: branch de desenvolvimento, onde as novas documentações são escritas e revisadas.  
+- `gh-pages`: branch de produção, onde a documentação é publicada.  
 
 O ideal é que cada desenvolvedor crie uma branch local para desenvolver suas documentações, e depois faça um pull request para a branch `dev`. Assim, as documentações podem ser revisadas e corrigidas antes de serem publicadas.
 

@@ -29,3 +29,5 @@ Este diretório vai possui as camadas [meta-nao](https://github.com/HULKs/meta-n
     cp -r nao/yocto/meta-hulks meta-hulks
     git clone git@github.com:HULKs/meta-nao
 ```
+
+**Incompleto**

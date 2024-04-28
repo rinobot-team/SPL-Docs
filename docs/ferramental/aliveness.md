@@ -3,6 +3,7 @@
 
 ## Informações Disponíveis via Aliveness
 As seguintes informações estão disponíveis via Aliveness:
+
 - Hostname
 - Versão atual do HULKs-OS
 - Estados dos serviços do sistema: HAL (Hardware Abstraction Layer), HuLA, HULK e LoLA

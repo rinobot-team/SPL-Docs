@@ -6,9 +6,9 @@ Um cycler no sistema de controle robótico Tamboerijn é um sobcomponente que ci
 
 Existem múltiplos cyclers em todo o software, e uma das principais tarefas da framework é permitir que eles comuniquem entre si. Por exemplo, na etapa de *setup*, dados de outros cyclers e da comunicação são coletado. Ou, na etapa de *término*, os dados produzidos durante o *processamento* são enviados para outros cyclers, caso necessário.
 
-Cyclers são separados em duas categorias:
-1. **Cyclers de tempo real**: Usados para controle do robô, como em atuadores.
-2. **Cyclers de percepção**: Usados para processar dados de sensores, como o de visão por exemplo.
+Cyclers são separados em duas categorias:  
+1. **Cyclers de tempo real**: Usados para controle do robô, como em atuadores.  
+2. **Cyclers de percepção**: Usados para processar dados de sensores, como o de visão por exemplo.  
 
 ## Cycler de tempo real
 Um cycler de tempo real existe externamente ao ambiente, integra dados oriúndos dos cyclers de perceção, e produz alguma saída no fim do ciclo. Um exemplo é o cycler que roda em tempo real sincronizado com o intervalo do LoLA (83 hz), ele recebe dados de sensores do HULA/LoLA através da interface de hardware e cria uma saída para os atuadores que é mandada de volta para o HULA/LoLA. O cycler de controle integra dados de todos os outros cyclers de percepão (áudio, SPL network e visão) em sua pipeline de filtragem. Mais informações sobre essa pipeline podem ser encontradas em [Filtragem](./filtering.md). O cycler de controle comtém todo código de robótica que precisa ser avaliado em cada ciclo de tempo real. Em outras palavras, ele possui todos os nós necessários para gerar novos outputs. Qualquer nó que seja muito custoso computacionalmente, como a visão, é executada em seu próprio cycler de percepção.

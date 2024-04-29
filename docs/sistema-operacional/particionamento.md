@@ -1,6 +1,6 @@
 # Particionamento
 O Nao usa um único dispositivo de armazenamento flash para fins de armazenamento principal. Depois de fazer o flash corretamente com o HULKsOS, esse dispositivo fica reconhecido como `/dev/mmcblk1`. O dispositivo conta com 4 partições diferentes:
-```plaintext
+```bash
 NOME           TAMANHO     PONTO DE MONTAGEM
 mmcblk1p1       29.1G
 |- mmcblk1p1    128M      /media/internal

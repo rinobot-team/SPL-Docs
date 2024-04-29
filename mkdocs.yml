@@ -38,6 +38,13 @@ nav:
     - Hello World: workflow/compilar-hello-world.md
     - Competições: workflow/competicao.md
     - Desenvolvimento: workflow/desenvolvimento.md
+  - Sistema Operacional:
+    - Indice: sistema-operacional/README.md
+    - Particionamento: sistema-operacional/particionamento.md
+    - Diretório Home: sistema-operacional/home-dir.md
+    - Linux: sistema-operacional/linux.md
+    - WiFi: sistema-operacional/wifi.md
+    - HULA: sistema-operacional/hula.md
 theme:
   name: material
   logo: img/favicon.ico

@@ -26,9 +26,4 @@ Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membro
 | [Sistema Operacional](./sistema-operacional/README.md) | Não existe |
 | [Robótica](./robotica/README.md) | Não existe |
 | [Workflow](./workflow/README.md) | Não existe |
-| [Configuração do Projeto](./docs/config-projeto/README.md)  | Incompleto |
-| [Framework](./docs/framework/README.md) | Incompleto |
-| [Ferramental](./docs/ferramental/README.md) | Incompleto |
-| [Sistema Operacional](./docs/sistema-operacional/README.md) | Não existe |
-| [Robótica](./docs/robotica/README.md) | Não existe |
-| [Workflow](./docs/workflow/README.md) | Não existe |
+

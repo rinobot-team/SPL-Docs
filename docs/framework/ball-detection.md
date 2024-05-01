@@ -1,5 +1,5 @@
 # Detecção de Bola
-A Detecção de Bola é uma parte de extrema importância durante toda a extensão do jogo, orientando o robô e o própio código em si. Para isso, utiliza a captação e e interpretação das imagens das câmeras superior e infeirior presentes no NAO, coleta e processa as imagens, obtendo as informações necessárias para as outras estruturas de decisão, como a Movimentação e o Comportamento.
+A Detecção de Bola é uma parte de extrema importância durante toda a extensão do jogo, orientando o robô e o própio código em si. Para isso, utiliza a captação e e interpretação das imagens das câmeras superior e inferior presentes no NAO, coleta e processa as imagens, obtendo as informações necessárias para as outras estruturas de decisão, como a Movimentação e o Comportamento.
 
 Em um alto nível, a detecção de bola segue as seguintes etapas:  
 
@@ -12,10 +12,10 @@ A seguir, cada um dos pontos do processo de detecção será analisada:
 ## Estruturas
 
 ### NeuralNetworks
-A estrutura **NeuralNetworks** contém três redes neurais compiladas: `preclassifier`, `classifier` e `positioner`. Estas redes neurais são provavelmente usadas para classificar se uma determinada região da imagem contém uma bola (preclassifier e classifier) e para determinar a posição da bola na imagem (positioner).
+A estrutura **NeuralNetworks** contém três redes neurais compiladas: `preclassifier`, `classifier` e `positioner`. Estas redes neurais são usadas para classificar se uma determinada região da imagem contém uma bola (preclassifier e classifier) e para determinar a posição da bola na imagem (positioner).
 
 ### BallCluster
-A estrutura **BallCluster** é usada para agrupar várias CandidateEvaluation que são consideradas parte da mesma bola. Ela contém um Circle que representa a localização e o tamanho da bola, e um vetor de referências para as CandidateEvaluation que são membros do cluster.
+A estrutura **BallCluster** é usada para agrupar várias `CandidateEvaluation` que são consideradas parte da mesma bola. Ela contém um Circle que representa a localização e o tamanho da bola, e um vetor de referências para as `CandidateEvaluation` que são membros do cluster.
 
 ### Estados de ciclo
 As estruturas **CreationContext**, **CycleContext** e **MainOutputs** são usadas para gerenciar o estado e os parâmetros do ciclo de detecção de bolas. **CreationContext** contém a interface de hardware e os parâmetros de detecção de bolas. **CycleContext** contém várias entradas e parâmetros necessários para um ciclo de detecção, incluindo os candidatos a bola, a matriz da câmera, os candidatos da grade de perspectiva, a imagem e o raio da bola. **MainOutputs** contém a saída principal do ciclo de detecção, que é um vetor opcional de bolas detectadas.

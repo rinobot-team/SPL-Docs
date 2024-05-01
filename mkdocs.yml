@@ -21,6 +21,7 @@ nav:
     - Base de Dados e Tipos: framework/databases-types.md
     - Parâmetros: framework/parameters.md
     - Comunicação: framework/communication.md
+    - Detecção de bola: framework/ball-detection.md
     - Interface com Hardware: framework/hardware-interface.md
     - Comunicação entre Threads: framework/thread-communication.md
     - Filtragem: framework/filtering.md

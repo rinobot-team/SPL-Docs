@@ -2,24 +2,25 @@
 A Detecção de Bola é uma parte de extrema importância durante toda a extensão do jogo, orientando o robô e o própio código em si. Para isso, utiliza a captação e e interpretação das imagens das câmeras superior e infeirior presentes no NAO, coleta e processa as imagens, obtendo as informações necessárias para as outras estruturas de decisão, como a Movimentação e o Comportamento.
 
 Em um alto nível, a detecção de bola segue as seguintes etapas:  
+
 - Detecção das imagens pelas cameras (`local`) e interpretação das informações nos formatos adequados
 - Interpretação e avaliação dos dados das imagens pelas redes neurais (`local`)
 - Obtenção da presença da bola e a sua localização
 
 A seguir, cada um dos pontos do processo de detecção será analisada:
 
-# Estruturas
+## Estruturas
 
-## NeuralNetworks
+### NeuralNetworks
 A estrutura **NeuralNetworks** contém três redes neurais compiladas: `preclassifier`, `classifier` e `positioner`. Estas redes neurais são provavelmente usadas para classificar se uma determinada região da imagem contém uma bola (preclassifier e classifier) e para determinar a posição da bola na imagem (positioner).
 
-## BallCluster
+### BallCluster
 A estrutura **BallCluster** é usada para agrupar várias CandidateEvaluation que são consideradas parte da mesma bola. Ela contém um Circle que representa a localização e o tamanho da bola, e um vetor de referências para as CandidateEvaluation que são membros do cluster.
 
-## Estados de ciclo
+### Estados de ciclo
 As estruturas **CreationContext**, **CycleContext** e **MainOutputs** são usadas para gerenciar o estado e os parâmetros do ciclo de detecção de bolas. **CreationContext** contém a interface de hardware e os parâmetros de detecção de bolas. **CycleContext** contém várias entradas e parâmetros necessários para um ciclo de detecção, incluindo os candidatos a bola, a matriz da câmera, os candidatos da grade de perspectiva, a imagem e o raio da bola. **MainOutputs** contém a saída principal do ciclo de detecção, que é um vetor opcional de bolas detectadas.
 
-## BallDetection
+### BallDetection
 A estrutura **BallDetection** é onde o processo da detecção de bola ocorre, com todas as partes praticas do procedimento. Ela é definida com um campo neural_networks do tipo NeuralNetworks. Este campo é marcado com o atributo  `#[serde(skip, default = "deserialize_not_implemented")]`, o que indica que ele deve ser ignorado durante a serialização e deserialização.
 
 A seguir, será analisada cada uma das funções presentes dentro da estrutura **BallDetection**:
@@ -64,14 +65,14 @@ A função `sample_grayscale` usa uma referência a [YCbCr422Image](https://gith
 ### evaluate_candidates
 A função `evaluate_candidates` pega uma lista de possíveis candidatos à bola (representados como círculos), uma imagem e um conjunto de redes neurais. Ele avalia cada candidato ampliando o círculo do candidato, amostrando os valores da escala de cinza da imagem dentro desse círculo e, em seguida, alimentando essa amostra em duas redes neurais: um `preclassifier` e um `classifier`. O `preclassifier` é usado para eliminar rapidamente candidatos improváveis, enquanto o `classifier` é usado para uma avaliação mais detalhada. Se a confiança do `classifier` estiver acima de um determinado limite, o círculo do candidato é corrigido utilizando uma terceira rede neural, o posicionador.
 
-### image_container
+### bounding_box_patch_intersection
 A função ``bounding_box_patch_intersection`` calcula a área de intersecção entre as caixas delimitadoras de dois círculos (o círculo candidato e um círculo candidato de patch). Isso é usado para determinar quanta sobreposição existe entre os dois círculos.
 
-### calcula_ball_merge_factor
+### image_containment
 A função ``image_containment`` calcula quanto de um círculo está contido na imagem. Isto é feito criando um retângulo que representa a imagem, calculando a área de interseção entre a caixa delimitadora do círculo e o retângulo da imagem e, em seguida, dividindo-a pela área da caixa delimitadora do círculo.
 
-### merge_balls
-A função ``calcula_ball_merge_factor`` calcula um fator de mesclagem para uma bola. Isso é feito aumentando a confiança do classificador, a proximidade da correção (quão próximo o círculo corrigido está do círculo candidato) e a contenção da imagem para certas potências e depois multiplicando-as.
+### calculate_ball_merge_factor
+A função ``calculate_ball_merge_factor`` calcula um fator de mesclagem para uma bola. Isso é feito aumentando a confiança do classificador, a proximidade da correção (quão próximo o círculo corrigido está do círculo candidato) e a contenção da imagem para certas potências e depois multiplicando-as.
 
 ### merge_balls
 A função ``merge_balls`` mescla uma lista de bolas em uma única bola. Isto é feito calculando uma média ponderada dos centros e raios das bolas, onde os pesos são os pesos mesclados das bolas.

@@ -1,6 +1,7 @@
 # Documentação do [Tamboerijn](https://github.com/rinobot-team/Tamboerijn)
-
 *Disclaimer: This docs are based on the original documentation written by the HULKs team, it has some parts adapted to our team's needs*
+
+### Clique [aqui](https://rinobot-team.github.io/SPL-Docs) para acessar nossa documentação!
 
 ![Bisnaguinha](./docs/bisnaguinha.jpg)
 

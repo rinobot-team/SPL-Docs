@@ -75,8 +75,10 @@ O ideal é que cada desenvolvedor crie uma branch local para desenvolver suas do
 *Cuidado para não dar push na sua branch local*
 
 Caso seu documento seja revisado e aprovado, ele será movido para a branch `main` e `gh-pages` para ser publicado.
+Caso seu documento seja revisado e aprovado, ele será movido para a branch `main` e `gh-pages` para ser publicado.
 
 ```bash
+    git switch main
     git switch main
     git merge dev
     git push

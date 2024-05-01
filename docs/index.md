@@ -22,6 +22,6 @@ Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membro
 | Configuração do Projeto  | Incompleto |
 | Framework | Incompleto |
 | Ferramental | Incompleto |
-| Sistema Operacional | Não existe |
+| Sistema Operacional | Incompleto |
 | Robótica | Não existe |
 | Workflow | Incompleto |

@@ -27,13 +27,6 @@ nav:
     - Filtragem: framework/filtering.md
     - Macros: framework/macros.md
     - Tratamento de Erros: framework/error-handling.md
-  - Ferramental:
-    - Indice: ferramental/README.md
-    - Pepsi:  ferramental/pepsi.md
-    - Twix:  ferramental/twix.md
-    - Recording & Replay:  ferramental/recording.md
-    - Behaviour Simulation: ferramental/behaviour-sim.md
-    - Aliveness:  ferramental/aliveness.md
   - Workflow:
     - Indice: workflow/README.md
     - Hello World: workflow/compilar-hello-world.md
@@ -46,6 +39,27 @@ nav:
     - Linux: sistema-operacional/linux.md
     - WiFi: sistema-operacional/wifi.md
     - HULA: sistema-operacional/hula.md
+  - Robótica:
+    - Indice: robotica/README.md
+    - Sensoriamento:
+      - Filtragem: robotica/sensoriamento/filtragem.md
+      - Visão: robotica/sensoriamento/visao.md
+      - Áudio: robotica/sensoriamento/audio.md
+    - Comportamento e Estratégia:
+      - Comportamento: robotica/comportamento/comportamento.md
+      - SPL Network: robotica/comportamento/spl-network.md
+    - Movimentação:
+      - Planejamento de Passos: robotica/movimentacao/step-planning.md
+      - Caminhar: robotica/movimentacao/caminhar.md
+      - Chutar: robotica/movimentacao/chutar.md
+      - Motion Files: robotica/movimentacao/motion-files.md
+  - Ferramental:
+    - Indice: ferramental/README.md
+    - Pepsi:  ferramental/pepsi.md
+    - Twix:  ferramental/twix.md
+    - Recording & Replay:  ferramental/recording.md
+    - Behaviour Simulation: ferramental/behaviour-sim.md
+    - Aliveness:  ferramental/aliveness.md
 theme:
   name: material
   logo: img/favicon.ico

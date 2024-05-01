@@ -59,7 +59,7 @@ Informações mais detalhadas sobre a linguagem Markdown podem ser encontradas n
 Caso haja algum problema de permissão entre em contato com o gerente da categoria ou diretor de projetos.
 
 O repositório é dividido em 3 branchs principais:
-- `master`: branch principal, onde o código estável é mantido.  
+- `main`: branch principal, onde o código estável é mantido.  
 - `dev`: branch de desenvolvimento, onde as novas documentações são escritas e revisadas.  
 - `gh-pages`: branch de produção, onde a documentação é publicada.  
 
@@ -74,19 +74,14 @@ O ideal é que cada desenvolvedor crie uma branch local para desenvolver suas do
 ```
 *Cuidado para não dar push na sua branch local*
 
-Caso seu documento seja revisado e aprovado, ele será movido para a branch `master` e `gh-pages` para ser publicado.
+Caso seu documento seja revisado e aprovado, ele será movido para a branch `main` e `gh-pages` para ser publicado.
 
 ```bash
-    git switch master
+    git switch main
     git merge dev
     git push
 ```
 Merge entre dev e main é idealmente feita pelo gerente, mas pode ser feita por qualquer membro da equipe mediante aprovação.
-
-```bash
-    mkdocs gh-deploy
-```
-O comando acima é utilizado para publicar a documentação no GitHub Pages. Ele gera uma página estática com a documentação e a publica na branch `gh-pages` automaticamente. A página pode ser acessada em `https://rinobot-team.github.io/SPL-Docs/`.
 
 ### MkDocs
 O MkDocs é uma ferramenta que permite a criação de documentações estáticas a partir de arquivos Markdown. Ele é utilizado para gerar a documentação do projeto e publicá-la no GitHub Pages. Como esse projeto é baseado em python, é necessário criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) para instalar as dependências.
@@ -130,4 +125,6 @@ Para publicar a documentação no GitHub Pages, basta rodar o comando:
 ```bash
     mkdocs gh-deploy
 ```
+O comando acima é utilizado para publicar a documentação no GitHub Pages. Ele gera uma página estática com a documentação e a publica na branch `gh-pages` automaticamente. A página pode ser acessada em `https://rinobot-team.github.io/SPL-Docs/`.
+
 É de boa prática que esse deploy seja feito após a revisão e aprovação da documentação e somente na branch `main`, para evitar erros e problemas de visualização.

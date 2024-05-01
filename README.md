@@ -19,18 +19,9 @@ Qualquer dúvida sobre o funcionamento do codebase pode ser tirada com os membro
 
 | Tópico | Status |
 | ------ | ------ |
-<<<<<<< HEAD
-| [Configuração do Projeto](./config-projeto/README.md)  | Incompleto |
-| [Framework](./framework/README.md) | Incompleto |
-| [Ferramental](./ferramental/README.md) | Incompleto |
-| [Sistema Operacional](./sistema-operacional/README.md) | Não existe |
-| [Robótica](./robotica/README.md) | Não existe |
-| [Workflow](./workflow/README.md) | Não existe |
-=======
 | [Configuração do Projeto](./docs/config-projeto/README.md)  | Incompleto |
 | [Framework](./docs/framework/README.md) | Incompleto |
 | [Ferramental](./docs/ferramental/README.md) | Incompleto |
-| [Sistema Operacional](./docs/sistema-operacional/README.md) | Não existe |
+| [Sistema Operacional](./docs/sistema-operacional/README.md) | Incompleto |
 | [Robótica](./docs/robotica/README.md) | Não existe |
-| [Workflow](./docs/workflow/README.md) | Não existe |
->>>>>>> dev
+| [Workflow](./docs/workflow/README.md) | Incompleto |

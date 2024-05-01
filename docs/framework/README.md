@@ -7,7 +7,8 @@ Esse tópico aborda a framework do nosso software para o NAO. Os capítulos pass
     - [Nós](./nodes.md): O que são os nós e como eles são implementados?   
     - [Bases de dados e Tipos](./databases-types.md): Como os dados são compartilhados entre cyclers e a framework?   
     - [Parâmetros](./parameters.md): Como os parâmetros são passados para os nós pela framework?   
-    - [Comunicação](./communication.md): Do que se trata e como é feita a comunicação entre framework e nós?   
+    - [Comunicação](./communication.md): Do que se trata e como é feita a comunicação entre framework e nós? 
+    - [Detecção de Bolas](./ball-detection.md): Como a detecção de bolas é feita na framework?
     - [Interface com Hardware](hardware-interface.md): Como o hardware é abstraído para a framework?   
     - [Comunicação entre threads](./thread-communication.md): Quais conceitos existem para permitir uma comunicação thread-safe entre os subcomponentes?   
     - [Filtragem](./filtering.md): Como a filtragem de dados é feita na framework e como ela se comporta num software multi-thread?   

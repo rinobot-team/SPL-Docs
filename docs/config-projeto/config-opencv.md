@@ -1,4 +1,4 @@
-# Como instalar OpenCV 4.7.0 no seu computador
+# Como instalar OpenCV
 O OpenCV é uma biblioteca de visão computacional usada eventualmente por algumas equipes da SPL.
 ### Alguns usos da biblioteca na liga:
 1. SPQRTeam 🇮🇹 (2016):

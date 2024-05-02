@@ -18,6 +18,7 @@ A maneira "padrão" de instalação do OpenCV é via compilação do código fon
   <summary>Exemplo de instalação via terminal</summary>
   
   ```bash
+  sudo apt install -y build-essential
   mkdir opencv_install
   cd opencv_install
   wget "https://github.com/hybridgroup/gocv/raw/release/Makefile"
@@ -28,7 +29,11 @@ A maneira "padrão" de instalação do OpenCV é via compilação do código fon
 ### Detalhes
 1. Caso não tenha o `make`: `sudo apt install build-essential`
 2. Vai dar um erro no final do script, algo como:
-```bash
+
+<details>
+  <summary>Mostrar erro do final do script</summary>
+
+  ```bash
     go clean --cache
     rm -rf /tmp/opencv
     /bin/sh: 1: go: not found
@@ -36,6 +41,7 @@ A maneira "padrão" de instalação do OpenCV é via compilação do código fon
     make: go: No such file or directory
     make: *** [Makefile:315: verify] Error 127
 ```
+</details>
 Não se preocupe.
 
 ## Como testar a instalação

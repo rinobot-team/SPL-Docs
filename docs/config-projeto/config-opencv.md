@@ -10,7 +10,7 @@ O OpenCV é uma biblioteca de visão computacional usada eventualmente por algum
 ## Como instalar
 A maneira "padrão" de instalação do OpenCV é via compilação do código fonte. Por ser um processo relativamente complicado, um querido fez um script que faz esse processo.
 1. Crie uma pasta em qualquer lugar (e.g opencv_installation)
-2. Baixe [**esse** Makefile](https://github.com/hybridgroup/gocv/blob/release/Makefile). <sub>[link reserva](https://github.com/rinobot-team/SPL-assets/blob/main/OpenCV4/Makefile)</sub>
+2. Baixe [**esse** Makefile](https://github.com/rinobot-team/SPL-assets/raw/main/OpenCV4/Makefile). <sub>[link reserva](https://github.com/hybridgroup/gocv/blob/release/Makefile)</sub>
 3. Coloque o Makefile na pasta que você criou
 4. dentro da pasta: `make install`
 
@@ -21,7 +21,7 @@ A maneira "padrão" de instalação do OpenCV é via compilação do código fon
   sudo apt install -y build-essential
   mkdir opencv_install
   cd opencv_install
-  wget "https://github.com/hybridgroup/gocv/raw/release/Makefile"
+  wget "https://github.com/rinobot-team/SPL-assets/raw/main/OpenCV4/Makefile"
   make install
   ```
 </details>

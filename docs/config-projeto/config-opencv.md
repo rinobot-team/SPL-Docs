@@ -13,6 +13,18 @@ A maneira "padrão" de instalação do OpenCV é via compilação do código fon
 2. Baixe [**esse** Makefile](https://github.com/hybridgroup/gocv/blob/release/Makefile)
 3. Coloque o Makefile na pasta que você criou
 4. dentro da pasta: `make install`
+
+<details>
+  <summary>Exemplo de instalação via terminal</summary>
+  
+  ```bash
+  mkdir opencv_install
+  cd opencv_install
+  wget "https://github.com/hybridgroup/gocv/raw/release/Makefile"
+  make install
+  ```
+</details>
+
 ### Detalhes
 1. Caso não tenha o `make`: `sudo apt install build-essential`
 2. Vai dar um erro no final do script, algo como:

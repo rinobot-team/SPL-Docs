@@ -11,6 +11,7 @@ nav:
     - Imagem & SDK: config-projeto/imagem-sdk.md
     - NAO: config-projeto/config-nao.md
     - Escrevendo Documentação: config-projeto/documentacao.md
+    - Instalando OpenCV: config-projeto/config-opencv.md
   - Framework:
     - Indice: framework/README.md
     - Estrutura dos Diretórios: framework/directory-struct.md

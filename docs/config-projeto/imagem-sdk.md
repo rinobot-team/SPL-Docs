@@ -49,21 +49,21 @@ Clone o repositório `meta-nao` da HULKs para dentro da pasta `worktree/`:
 
 ### Criação da Imagem
 
-O NAOv6 utiliza o LoLA e HAL para comunicação com a placa do peito. Esses programas são fornecidos pela SoftBank já compilados na imagem OPN de Robocupper. Para conseguí-los é preciso extrair seus binários da imagem OPN, para isso é utilizado o script `meta-nao/recipes-support/aldebaran/extract-binaries.sh`. Para gerar o arquivo contendo os binários citados siga esses passos:
+O NAOv6 utiliza o LoLA e HAL para comunicação com a placa do peito. Esses programas são fornecidos pela SoftBank já compilados na imagem OPN de Robocupper. Para conseguí-los é preciso extrair seus binários da imagem OPN, para isso é utilizado o script `meta-nao/meta/recipes-support/aldebaran/extract_binaries.sh`. Para gerar o arquivo contendo os binários citados siga esses passos:
 
 ```bash
-    cd meta-nao/recipes-support/aldebaran
+    cd meta-nao/meta/recipes-support/aldebaran
     mkdir -p aldebaran-binaries
-    ./extract-binaries.sh -o aldebaran-binaries/aldebaran_binaries.tar.gz <imagem-robocupper.opn>
+    ./extract_binaries.sh -o aldebaran-binaries/aldebaran_binaries.tar.gz <imagem-robocupper.opn>
 ```
 
 Esta imagem pode ser adquirida entrando em contato com a RoboCup SPL TC ou, para membros da Rinobot, baixando-a do Google Drive (Em `SPL>Utilitários>Imagens Do Sistema>nao-2.8.5.11_ROBOCUP_ONLY_with_root.opn`).  
 **TODO:** Colocar imagem no repositório do SPL-assets.
 
-Caso ocorra algum erro referente a `libguestfs` e `supermin` execute o comando como `sudo`, em caso de falta do pacote `guestmount` instale-o com o comando:
+Caso ocorra algum erro referente a `libguestfs` e `supermin` execute o comando como `sudo`, em caso de falta do pacote `guestmount` ou `patchelf` instale-os com o comando:
 
 ```bash
-    sudo apt install guestmount
+    sudo apt install guestmount patchelf
 ```
 
 Execute o `kas` dentro da pasta `worktree/` referenciando o arquivo e configuração do projeto `kas-project.yml`:

@@ -22,7 +22,6 @@ nav:
     - Base de Dados e Tipos: framework/databases-types.md
     - Parâmetros: framework/parameters.md
     - Comunicação: framework/communication.md
-    - Detecção de bola: framework/ball-detection.md
     - Interface com Hardware: framework/hardware-interface.md
     - Comunicação entre Threads: framework/thread-communication.md
     - Filtragem: framework/filtering.md
@@ -45,6 +44,7 @@ nav:
     - Sensoriamento:
       - Filtragem: robotica/sensoriamento/filtragem.md
       - Visão: robotica/sensoriamento/visao.md
+      - Detecção de bola: robotica/sensoriamento/ball-detection.md
       - Áudio: robotica/sensoriamento/audio.md
     - Comportamento e Estratégia:
       - Comportamento: robotica/comportamento/comportamento.md

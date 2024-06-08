@@ -101,4 +101,28 @@ Isso gera e executa tudo necessário para construir o arquivo `.opn`. Este proce
 
 Ao final do processo, o arquivo `.opn` estará disponível em `worktree/build/tmp/deploy/images/nao-v6/nao-image-HULKsOS-<versão>.ext3.gz.opn`. A partir daqui, o arquivo pode ser gravado em um pendrive e utilizado para flashar o NAO.
 
-**TODO:** Configuração de IP e credenciais para o NAO.
+## Migrando da HULKs para Rinobot-Jaguar
+
+*Esta parte é bem imprecisa e ainda não foi testada*
+
+É preciso modificar alguns arquivos com informações hardcoded tanto nos arquivos de criação de imagem quanto no Tamborijn. Lembrese que o número do nosso time na Robocup é **47**. Os IDs de cabeça e corpo todos os robôs estão no [Drive da Rino](https://docs.google.com/document/d/16nKMPdGDzVwUSrvvkynVEvNF-w7cSi8O5gUpb4GqNBw/edit).
+
+### Modificando a Imagem (meta-hulks)
+
+Em `worktree/meta-hulks/recipes-hulks/network-config/configure-network` é preciso mudar os IPs para o nosso código, onde tem o 24 da HULKs coloque 47 (Ex: `10.1.24.x` para `10.1.47.x`).
+
+Em `worktree/meta-hulks/recipes-hulks/network-config/network-config/id_map.json` é preciso colocar os IDs de cabeça e corpo de todos os robôs. O conteúdo do arquivo do drive pode ser só copiado e colado no lugar.
+
+As configurações de conexão do wifi podem ser mudadas, o padrão já funciona corretamente, mas se for necessário modificar isso basta ir nos arquivos `worktree/meta-nao/recipes-conf/nao-wifi-conf/nao-wifi-conf/*.psk`.
+
+Para mudar o nome da Distro vá em `worktree/meta-hulks/conf/distro/HULKsOS.conf`. É necessário mudar a variável `DISTRO` e renomear o arquivo com grafia idêntica, além de mudar o nome no `meta-hulks/kas-project.yml`.
+
+### Modificando o Tamboerijn
+
+Mudar o número do time no arquivo `crates/spl_network/src/lib.rs`.  
+
+Em alguns lugares do Pepsi também é necessário mudar o número do time `tools/pepsi/src/parsers.rs`.  
+
+No Twix também é necessário mudar o número do time `tools/twix/src/completion_edit.rs`.
+
+E também é necessário importar os IDs de cabeça e corpo de todos os robôs no arquivo `etc/configuration/hardware_ids.json`.

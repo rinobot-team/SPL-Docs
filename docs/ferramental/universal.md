@@ -18,7 +18,6 @@ O código é simples.
 ### Observação
 O arquivo de coreografia possui algumas linhas de comentários, as quais são começadas por "#". O código reconhece essas linhas e apenas as-imprime sem nenhuma alteação.
 
-## Importante
-Este conversos está configurado para funcionar corretamente com os arquivos da Mari ou de arquivos com estrutura igual. Não existe nenhuma garantia de que ele funcionará corretamente em quaisquer outro tipo de arquivo.
+*Este conversor está configurado para funcionar corretamente com os arquivos da Mari ou de arquivos com estrutura igual. Não existe nenhuma garantia de que ele funcionará corretamente em quaisquer outro tipo de arquivo.*
 
 

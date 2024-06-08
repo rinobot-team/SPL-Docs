@@ -61,6 +61,7 @@ nav:
     - Recording & Replay:  ferramental/recording.md
     - Behaviour Simulation: ferramental/behaviour-sim.md
     - Aliveness:  ferramental/aliveness.md
+    - Universal: ferramental/universal.md
 theme:
   name: material
   logo: img/favicon.ico

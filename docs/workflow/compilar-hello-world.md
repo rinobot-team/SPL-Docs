@@ -27,6 +27,11 @@ Para isso eles (HULKs) desenvolveram um **script** de _bash_ que configura o amb
 #### **Não** achei a pasta `.naosdk` no meu computador
 Instala o código da HULKs (usando o **pepsi**) no seu computador primeiro depois volta aqui.  
 Obs: pra instalar basta dar um `./pepsi` na pasta do repositório da HULKs.
+1. Instala o rust: https://rustup.rs/
+1. Instala as dependencias do código da HULKs: `sudo apt install -y git git-lfs clang python3 zstd xz-utils file rsync`
+1. `git clone https://github.com/HULKs/hulk`
+1. `cd hulk`
+1. `./pepsi`
 
 ### Execução do Script:
 Antes de executar, uma ressalva, esse script altera várias variáveis de ambiente para fazer funcionar o código. Então vale entrar em outra sessão[^3] de **bash** antes para não _"contaminar"_ a atual.

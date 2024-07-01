@@ -49,6 +49,7 @@ nav:
     - Comportamento e Estratégia:
       - Comportamento: robotica/comportamento/comportamento.md
       - SPL Network: robotica/comportamento/spl-network.md
+      - Estados do Robô: robotica/comportamento/estados_do_robo.md
     - Movimentação:
       - Planejamento de Passos: robotica/movimentacao/step-planning.md
       - Caminhar: robotica/movimentacao/caminhar.md

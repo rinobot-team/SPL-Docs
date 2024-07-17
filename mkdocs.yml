@@ -32,6 +32,7 @@ nav:
     - Hello World: workflow/compilar-hello-world.md
     - Competições: workflow/competicao.md
     - Desenvolvimento: workflow/desenvolvimento.md
+    - Versionamento: workflow/versionamento.md
   - Sistema Operacional:
     - Indice: sistema-operacional/README.md
     - Particionamento: sistema-operacional/particionamento.md

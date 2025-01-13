@@ -4,7 +4,7 @@ Este documento visa a descrever o funcionamento da rede do SPL, da comunicação
 
 ## Game Controller
 
-Atualmente, toda a comunicação do SPL ocorre por IPv4, mas a maior parte também é compatível com IPv6. 
+Atualmente, toda a comunicação do SPL ocorre por IPv4, mas a maior parte também é compatível com IPv6.  
 
 Todo o tutorial de instalação e utilização do GameController está no [repositório](https://github.com/RoboCup-SPL/GameController3). Este documento explica o funcionamento e as especificações da comunicação.
 

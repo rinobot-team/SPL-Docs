@@ -3,3 +3,4 @@ site/
 
 #Ambiente python
 .venv/
+venv/

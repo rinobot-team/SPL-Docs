@@ -14,4 +14,5 @@ A idea por trás é bem simples:
 1. Há dois pés, o *pé de suporte* e o *pé de balanço*.  
 2. Mova o *pé de balanço* para frente na velocidade *x²*.  
 3. Mova o *pé de suporte* para trás na velocidade *x*.
- 
+
+Detalhes técnicos podem ser encontrados na página do [Step Planning](./step-planning.md).

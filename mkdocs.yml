@@ -27,6 +27,7 @@ nav:
     - Filtragem: framework/filtering.md
     - Macros: framework/macros.md
     - Tratamento de Erros: framework/error-handling.md
+    - SerDe: framework/SerDe.md
   - Workflow:
     - Indice: workflow/README.md
     - Hello World: workflow/compilar-hello-world.md
@@ -52,6 +53,7 @@ nav:
       - SPL Network: robotica/comportamento/spl-network.md
       - Estados do Robô: robotica/comportamento/estados_do_robo.md
     - Movimentação:
+      - Indice: robotica/movimentacao/README.md
       - Planejamento de Passos: robotica/movimentacao/step-planning.md
       - Caminhar: robotica/movimentacao/caminhar.md
       - Chutar: robotica/movimentacao/chutar.md

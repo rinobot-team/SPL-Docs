@@ -1,66 +1,98 @@
 # Nodes (Nós)
+
 Os Nós normalmente contém código de robótica propriamente dito e são intercambiáveis entre cyclers. Cada nó é caracterizado po uma função `cycle()` que é chamada em cada ciclo. Essa função pega os inputs do nó como parâmetros e retorna os outputs deste node. Além disso, nós possuem um estado que é preservado entre ciclos.
 
 ![Diagrama de um nó](node.drawio.png)
 
-Nós são structs normais do Rust em que os campos da struct representam o estado, e um método chamado `cycle()` no `impl` do nó que representa a função de ciclo. Esse conceito permite escrever os nós na forma mais otimizada para a linguagem Rust. Um nó pode ter multiplos inputs de diferentes tipos que podem ser adicionados ao struct. Aqui está um exemplo de nó, mais informação pode ser encontrada em [Macros](./macros.md):   
+Nós são structs normais do Rust em que os campos da struct representam o estado, e um método chamado `cycle()` no `impl` do nó que representa a função de ciclo. Esse conceito permite escrever os nós na forma mais otimizada para a linguagem Rust. Um nó pode ter multiplos inputs de diferentes tipos que podem ser adicionados ao struct. Aqui está um exemplo de nó, mais informação pode ser encontrada em [Macros](./macros.md):  
 
 ```rust
-pub struct SolePressureFilter { // (1)
-    left_sole_pressure: LowPassFilter<f32>,
-    right_sole_pressure: LowPassFilter<f32>,
+use std::{collections::VecDeque, time::SystemTime};
+
+use color_eyre::Result;
+use context_attribute::context;
+use framework::{MainOutput, PerceptionInput};
+use serde::{Deserialize, Serialize};
+use types::{cycle_time::CycleTime, filtered_whistle::FilteredWhistle, whistle::Whistle};
+
+#[derive(Deserialize, Serialize)]
+pub struct WhistleFilter { // (1)
+    detection_buffer: VecDeque<bool>,
+    was_detected_last_cycle: bool,
+    last_detection: Option<SystemTime>,
 }
 
-#[node(control)] // (2)
-#[parameter(path = low_pass_alpha, data_type = f32)] // (3)
-#[input(path = sensor_data, data_type = SensorData)] // (4)
-#[main_output(data_type = SolePressure)] // (5)
-impl SolePressureFilter {} // (6)
+#[context]
+pub struct CreationContext {} // (2)
 
-impl SolePressureFilter {
-    fn new(context: NewContext) -> anyhow::Result<Self> { // (7)
+#[context]
+pub struct CycleContext { // (3)
+    buffer_length: Parameter<usize, "whistle_filter.buffer_length">, // (4)
+    minimum_detections: Parameter<usize, "whistle_filter.minimum_detections">,
+    cycle_time: Input<CycleTime, "cycle_time">, // (5)
+    detected_whistle: PerceptionInput<Whistle, "Audio", "detected_whistle">, // (6)
+}
+
+#[context]
+#[derive(Default)]
+pub struct MainOutputs {
+    pub filtered_whistle: MainOutput<FilteredWhistle>,
+}
+
+impl WhistleFilter {
+    pub fn new(_context: CreationContext) -> Result<Self> { // (7)
         Ok(Self {
-            left_sole_pressure: LowPassFilter::with_alpha(
-                0.0,
-                *context.low_pass_alpha, // (8)
-            ),
-            right_sole_pressure: LowPassFilter::with_alpha(
-                0.0,
-                *context.low_pass_alpha,
-            ),
+            detection_buffer: Default::default(),
+            was_detected_last_cycle: false,
+            last_detection: None,
         })
     }
 
-    fn cycle(&mut self, context: CycleContext) -> anyhow::Result<MainOutputs> { // (9)
-        let force_sensitive_resistors =
-            &require_some!(context.sensor_data).force_sensitive_resistors;
+    pub fn cycle(&mut self, context: CycleContext) -> Result<MainOutputs> { // (8)
+        let cycle_start_time = context.cycle_time.start_time;
 
-        let left_sole_pressure = force_sensitive_resistors.left.sum();
-        self.left_sole_pressure.update(left_sole_pressure);
-        let right_sole_pressure = force_sensitive_resistors.right.sum();
-        self.right_sole_pressure.update(right_sole_pressure);
+        for &is_detected in context
+            .detected_whistle
+            .persistent
+            .values()
+            .flatten()
+            .flat_map(|whistle| &whistle.is_detected)
+        {
+            self.detection_buffer.push_front(is_detected);
+        }
+        self.detection_buffer.truncate(*context.buffer_length); // (9)
+
+        let number_of_detections = self
+            .detection_buffer
+            .iter()
+            .filter(|&&was_detected| was_detected)
+            .count();
+        let is_detected = number_of_detections > *context.minimum_detections;
+        let started_this_cycle = is_detected && !self.was_detected_last_cycle;
+        if started_this_cycle {
+            self.last_detection = Some(cycle_start_time);
+        }
+        self.was_detected_last_cycle = is_detected;
 
         Ok(MainOutputs {
-            sole_pressure: Some(SolePressure {
-                left: self.left_sole_pressure.state(),
-                right: self.right_sole_pressure.state(),
-            }),
-        })
+            filtered_whistle: FilteredWhistle {
+                is_detected,
+                last_detection: self.last_detection,
+                started_this_cycle,
+            }
+            .into(),
+        }) //(10)
     }
 }
 ```
 
 1. Estados do nó.
-2. Declaração do nó utilizando o [macro](./macros.md) `node`.
-3. Parâmetros de configuração do tipo `f32`.
-4. Inputs do tipo `SensorData`.
-5. Output do tipo `SolePressure`.
-6. O `impl` vazio facilita a utilização de *language servers* e *code linters*. Se a declaração do nó estivesse em conjunto com o `impl` abaixo os macros iriam produzir inúmeros erros enquando o código estivesse sendo construído. Isso acontece com frequencia implementando códigos de nó.
-7. É chamado na construição do nó.
-8. Usa os parâmetros de configuração declarados. Como é uma referência, o valor é desreferenciado com `*`.
-9. Chamado a cada ciclo.
-
-Esse nó consome o tipo `SensorData` como entrada e produz uma saída do tipo `SolePressure`. E possui duas variáveis de estado, `left_sole_pressure` e `right_sole_pressure`. E é responsável por abstrair os dados vindos dos sensores de pressão localizado nas solas dos pés do robô.
-
-Essa especificação de inputs e outputs do nó acarreta em grafo de dependências que permite organizar eles topológicamente, se todas as dependências forem satisfeitas antes de executar o `cycle()` de cada node. O arquivo `build.rs` automaticamente ordena os nós baseado nesse grafo.
-
+2. Contexto de criação do nó. Mais informações em [Macros](./macros.md).
+3. Contexto de ciclo do nó. Mais informações em [Macros](./macros.md).
+4. Parâmetros extraídos de `default.json`. Pode ser mudado em tempo de execução utilizando o [Twix](../ferramental/twix.md).
+5. Input de outro nó, do tipo `CycleTime`.
+6. Input de outro nó, mas com dados persistentes e transientes.
+7. Será chamado na criação do nó. Basicamente, é o construtor do nó.
+8. Será chamado a cada ciclo. É a função principal do nó.
+9. Parâmetro declarado pelo usuário. Então tem de ser uma referência. Aqui o parâmetro é desreferenciado para ser utilizado.
+10. Retorna os outputs do nó. O `into()` é utilizado para converter o tipo `FilteredWhistle` para `MainOutput<FilteredWhistle>`.

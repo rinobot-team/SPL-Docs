@@ -1,6 +1,6 @@
 # Resumo
 
-Neste arquivo apresentamos de forma teória como o Tamboerijn lida com movimentação. Esse esquema de 3 passos não ocorre na prática, no código é tudo de uma vez, mas é uma forma de entender como o robô se movimenta.  
+Neste arquivo apresentamos de forma simplificada como o Tamboerijn lida com movimentação. Esse esquema de 3 passos não ocorre na prática, no código é tudo de uma vez, mas é uma forma de entender como o robô se movimenta.  
 
 ## Seleção da Movimentação
 
@@ -12,4 +12,4 @@ No próximo passo, todos os nós de todas as motions são executados. Os nós, q
 
 ## Envio de Comandos
 
-A movimentação finaliza coletando todos os comandos dos motores na struct `motor_commands_collector`, envia eles para a `motor_commands_optimizer` e depois os escreve na interface de hardware no `command_sender`.  
+A movimentação finaliza coletando todos os comandos dos motores na struct `motor_commands_collector`, envia eles para a `motor_commands_optimizer` e depois os escreve na interface de hardware no `command_sender`.

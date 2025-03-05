@@ -52,6 +52,7 @@ nav:
       - Comportamento: robotica/comportamento/comportamento.md
       - SPL Network: robotica/comportamento/spl-network.md
       - Estados do Robô: robotica/comportamento/estados_do_robo.md
+      - Roles: robotica/comportamento/roles.md
     - Movimentação:
       - Indice: robotica/movimentacao/README.md
       - Planejamento de Passos: robotica/movimentacao/step-planning.md

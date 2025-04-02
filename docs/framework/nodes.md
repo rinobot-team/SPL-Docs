@@ -96,3 +96,58 @@ impl WhistleFilter {
 8. Será chamado a cada ciclo. É a função principal do nó.
 9. Parâmetro declarado pelo usuário. Então tem de ser uma referência. Aqui o parâmetro é desreferenciado para ser utilizado.
 10. Retorna os outputs do nó. O `into()` é utilizado para converter o tipo `FilteredWhistle` para `MainOutput<FilteredWhistle>`.
+
+## Template de nó
+
+Não é uma regra fixa, mas esse template engloba o básico de um nó. Ajuste conforme necessário.
+
+```rust
+use color_eyre::Result; // (1)
+use context_attribute::context;
+use framework::MainOutput;
+use serde::{Serialize, Deserialize};
+
+#[derive(Default, Serialize, Deserialize)]
+pub struct ExampleNode {
+    // (2) 
+}
+
+#[context]
+#[derive(Default)]
+pub struct MainOutputs {
+    pub some_output: MainOutput<u32>, // (3)
+}
+
+#[context]
+pub struct CreationContext {
+    // (4)
+}
+
+#[context]
+pub struct CycleContext {
+    // (5)
+}
+
+impl ExampleNode {
+    pub fn new(_context: CreationContext) -> Result<Self> {
+        Ok(Self::default())
+    }
+
+    pub fn cycle(&mut self, _context: CycleContext) -> Result<MainOutputs> {
+        // Processamento do node
+        let valor_processado = 42;
+
+        // Retorna as saídas principais
+        Ok(MainOutputs {
+            some_output: valor_processado.into(), // (6)
+        })
+    }
+}
+```
+
+1. Biblioteca para tratamento e formatação de erros.
+2. Estados do nó.
+3. Outputs do nó. O `MainOutput` é um tipo especial da framework que permite a conversão de tipos.
+4. Contexto de criação do nó, conjunto de dependências e parâmetros fornecidos ao node quando ele é criado.
+5. Contexto de ciclo do nó, carrega os dados (inputs, parâmetros etc.) recebidos a cada iteração do node.
+6. Retorna os outputs do nó. O `into()` é utilizado para converter o tipo `u32` para `MainOutput<u32>`. Já o `Ok()` é utilizado para retornar um resultado de sucesso.
